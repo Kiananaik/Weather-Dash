@@ -13,9 +13,38 @@
     </head>
 
     <body>
+        <div class="navbar">
 
+        </div>
+        <div class="cityCast">
 
+        </div>
+        <div class="weekCast">
 
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        // Performing GET requests to the OMDB API and logging the responses to the console
+            $.ajax({
+            url: "",
+            method: "GET"
+            }).then(function(response) {
+            console.log(response);
+            });
+  
+            $.ajax({
+            url: "",
+            method: "GET"
+            }).then(function(response) {
+            console.log(response);
+            });
+  
+      
+            // ---------------------------------------------------------
+  
+            console.log("Because our AJAX requests are asynchronous, this line of code will most likely log first");
+        </script>
 
 
 
@@ -38,3 +67,13 @@
 
 
 </html>
+
+
+
+
+
+
+
+
+
+    
