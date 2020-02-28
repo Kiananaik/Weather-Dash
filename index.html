@@ -1,79 +1,87 @@
-<!DOCTYPE>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="author" content="Kiana N. G. Darlington and Bootstrap contributors">
+<!DOCTYPE html>
+<html lang="en-us">
 
-        <title>Kiki's Weather Forecast</title>
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="Stylesheet" type="text/css" href="assets/style.css">
-    </head>
+<head>
+    <meta charset="UTC-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <link rel="stylesheet" type="text/css" href="ExResetcss.css"> <!--START making a habit of resetting .css -- mines BETTER than the browser's bullshit.-->
 
-    <body>
-        <div class="navbar">
+    <meta name="description" content="boy oh boy, let's talk about the weather">
+    <meta name="author" content="Kiana N. G. Darlington, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
 
-        </div>
-        <div class="cityCast">
+    <title>Kiki's Forecast</title>
 
-        </div>
-        <div class="weekCast">
+    <script src="https://kit.fontawesome.com/5bc96e206d.js" crossorigin="anonymous"></script> <!--Creds to Allan for showing me these cuty pie icon stuff-->
 
-        </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-        // Performing GET requests to the OMDB API and logging the responses to the console
-            $.ajax({
-            url: "",
-            method: "GET"
-            }).then(function(response) {
-            console.log(response);
-            });
-  
-            $.ajax({
-            url: "",
-            method: "GET"
-            }).then(function(response) {
-            console.log(response);
-            });
-  
-      
-            // ---------------------------------------------------------
-  
-            console.log("Because our AJAX requests are asynchronous, this line of code will most likely log first");
-        </script>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main role="main" class="inner cover">
+            <nav class="navbar navbar-expand-md fixed-top ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    Look Up (City, State) Here
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <header class="masthead mb-auto">
+                            <div class="inner">
+                                <div class="masthead-brand header h2 text-center">
+                                    <h1 id="name">How's the Weather Up There?</h1>
+                                    <p id="sub">A Classic Weather Dash</p>
+                                </div>
+                            </div>
+                        </header>
+                    </ul>
+                    <br><br><br>
+                    <div class="locate">
+                        <div class="container" id="search-div">
+                            Look up a City, State:
+                            <div class="form-inline">
+                                <input type="text" class="form-control" id="city-input">
+                                <span><button class="btn btn-primary" id="search"><span class="fas fa-search-plus"</button></span>
+                            </div>
 
+                            <div id="loc-button-div">
 
+                            </div>
+                        </div>
+                    </div>
 
+                    <footer class="mastfoot inner cover-container mt-auto">
+                        <div class="footerbox">
+                            <p id="tag">Website design by Kiana N. G. Darlington</p>
+                            <div id="linkedinlink"><a href="https://www.linkedin.com/in/kiana-garcia-darlington-496957117/">linkedin</a></div>
+                            <div id="githublink"><a href="https://github.com/Kiananaik">github</a></div>
+                        </div>
+                    </footer>
+                </div>
+            </nav>
 
-
-        
-    </body>
-
-
-
-
+            <div class="mainbox container">
+                <div class="picwinfo container">
+                    <div  class="one kiki" id="results-div"></div>
+                    <div class="two forecast-div"></div>
+                </div>
+            </div>
+        </main>  
+    </div>
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <!-- Popper.JS CDN -->
+    <!-- Popper.JS & AJAX-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <!-- Bootstrap Javascript CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Bootstrap Javascript-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- My personal Javascript -->
     <script src="script.js"></script>
-
+</body>
 
 </html>
-
-
-
-
-
-
-
-
-
-    
