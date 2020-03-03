@@ -97,17 +97,13 @@ nav,
   align-items: center;
   margin-left: 3rem;
   margin-top: 1rem;
-
   color: rgb(172, 5, 149, 0.719);
-  
-
 }
 .mastfoot {
   flex: 1;
   order: 3;
 }
  /* ------------------- HEADER -------------------------*/
-
 .masthead {
   width: 350px;
   justify-content: center;
@@ -117,13 +113,12 @@ nav,
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #name {
   flex: 2;
   order: 1;
-  font-weight: bold;
+  font-weight: normal;
 }
 #sub {
   flex: 1;
@@ -131,14 +126,7 @@ nav,
   font-size: small;
   margin-top: 10px;
 }
-
 /* ------- Media Queries ----------*/
-
-/* @media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-} */
 .cover {
   padding: 0 1.5rem;
 }
@@ -146,15 +134,13 @@ nav,
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
 /* ---------------------- FOOTER --------------------------------- */
-
 .footerbox {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-top: 7rem;
+  margin-top: 4.8rem;
   margin-bottom: 2rem;
   padding: 0;
   text-shadow: none; /* Prevent inheritance from `body` */
@@ -167,7 +153,6 @@ nav,
   text-align: left;
   flex: 1;
   order: 1;
-  
 }
 #linkedinlink {
   flex: 1;
@@ -177,11 +162,8 @@ nav,
   flex: 1;
   order: 3;
 }
-
 /* -------- end of footer --------------------------------*/
-
 /* BODY CONTENT STUFF LIKE FONTS ---------------------------------------------- */
-
 .mainbox {
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +171,6 @@ nav,
   flex-wrap: wrap;
   margin-left: 20%;
 }
-
 .picwinfo {
   flex: 1;
   order: 1;
@@ -212,44 +193,50 @@ nav,
   order: 2;
   margin-top: 5%;
 }
-
-
-
 /* SPECIFIC WEATHER STUFF */
-
-
-
-
-.uv-low{
-  color: #ffffff;
-  background-color: rgb(19, 245, 11);
+#uv {
+  border-radius: 25%;
 }
-.uv-moderate{
-  background-color: yellow;
+.UV1{
+  color: rgb(0, 0, 0);
+  background-color: rgb(9, 255, 0, 0.5);
 }
-.uv-high{
-  color: #ffffff;
-  background-color: orange;
+.UV2{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 0, 0.5);
 }
-.uv-very-high{
-  color: #ffffff;
-  background-color: red;
+.UV3{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 166, 0, 0.5);
 }
-.uv-extreme{
-  color: #ffffff;
-  background-color: violet;;
+.UV4{
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 0, 0, 0.5);
 }
-
-
-#results-div{
+.UV5{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 0, 179, 0.5);
+}
+#output{
   padding: 15px;
   margin: 5px;
 }
-.card{
+.weekBoxes {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.box {
+  justify-content: center;
+  text-align: center;
   color: white;
   background-color: rgb(172, 5, 149, 0.719);
+  border-radius: 25%;
   min-width: 100px;
-  max-width: 200px;
+  max-width: 150px;
+  margin: 15px;
+  padding: 2px;
+  padding-top: 5px;
 }
-
-
